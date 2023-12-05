@@ -5,9 +5,9 @@ import { FiAlignRight, FiX } from "react-icons/fi";
 import { useState } from "react";
 
 const navigation = [
-  { name: "Home", to: "/" },
-  { name: "About", to: "#" },
-  { name: "Pricing", to: "#" },
+  { name: "About", to: "/" },
+  { name: "FAQs", to: "#" },
+  { name: "Resources", to: "#" },
 ];
 
 const NavButton = () => {
