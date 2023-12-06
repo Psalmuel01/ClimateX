@@ -4,6 +4,7 @@ import Dashboard from "./pages/App/Dashboard";
 import Home from "./pages/App/components/Home";
 import Impact from "./pages/App/components/Impact";
 import Marketplace from "./pages/App/components/Marketplace";
+import Events from "./pages/App/components/Events";
 
 function NoMatch() {
   return (
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/app/marketplace",
         element: <Marketplace />,
+      },
+      {
+        path: "/app/events",
+        element: <Events />,
       },
       {
         path: "*",
