@@ -4,13 +4,13 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 const DashHeader = () => {
   return (
-    <div className="flex justify-between mb-5">
+    <div className="flex justify-between mb-8">
       <div className="flex items-center gap-5">
-        <div className="flex items-center gap-2 w-80 px-5 py-1 text-sm rounded-xl bg-gray-200">
+        <div className="flex items-center gap-2 w-80 px-5 py-1.5 text-sm rounded-xl bg-gray-200">
           <IoSearchOutline />
           <p>Search</p>
         </div>
-        <IoFilter />
+        <IoFilter size={18} />
       </div>
       <div className="flex items-center gap-3">
         <img src={avatar} className="w-1/6" alt="" />
