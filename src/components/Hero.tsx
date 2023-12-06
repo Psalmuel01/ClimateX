@@ -4,7 +4,7 @@ import woods from "../assets/woods.png";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col p-5 gap-10">
+    <div className="flex flex-col py-5 gap-10">
       <div className="flex">
         <div className="flex flex-col my-auto gap-6">
           <h1 className="font-medium text-5xl w-2/3 leading-relaxed">

@@ -1,5 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Landing from "./pages/Landing";
+import Dashboard from "./pages/App/Dashboard";
+import Home from "./pages/App/components/Home";
+import Impact from "./pages/App/components/Impact";
+import Marketplace from "./pages/App/components/Marketplace";
 
 function NoMatch() {
   return (
@@ -18,6 +22,28 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NoMatch />,
+  },
+  {
+    path: "/app",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "/app",
+        element: <Home />,
+      },
+      {
+        path: "/app/impact",
+        element: <Impact />,
+      },
+      {
+        path: "/app/marketplace",
+        element: <Marketplace />,
+      },
+      {
+        path: "*",
+        element: <NoMatch />,
+      },
+    ],
   },
 ]);
 
