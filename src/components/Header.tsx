@@ -1,15 +1,12 @@
 import NavButton from "./NavButton";
-import climate from "../assets/climate.png";
 import { Link } from "react-router-dom";
+import climate from "../assets/climate.png";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = () => {
   return (
     <header>
-      <nav
-        className="flex items-center justify-between px-8 py-6 lg:px-20 lg:py-5"
-        aria-label="Global"
-      >
+      <nav className="flex items-center justify-between" aria-label="Global">
         <div className="justify-between items-center self-center flex w-full gap-5 max-md:max-w-full max-md:flex-wrap">
           <Link
             to="/"
@@ -21,13 +18,13 @@ const Header = () => {
             <NavButton />
           </div>
           <div className="items-start self-center hidden lg:flex w-[521px] max-w-full justify-between gap-5 my-auto max-md:flex-wrap max-md:justify-center">
-            <div className="text-orange-400 text-xl font-bold self-stretch">
-              About
-            </div>
-            <div className="text-xl font-bold self-stretch">FAQs</div>
-            <div className="text-xl font-bold self-stretch">Resources</div>
+            <div className="text-lg">About</div>
+            <div className="text-lg">FAQs</div>
+            <div className="text-lg">Resources</div>
           </div>
-          <ConnectButton />
+          <div className="max-lg:hidden">
+            <ConnectButton />
+          </div>
         </div>
       </nav>
     </header>

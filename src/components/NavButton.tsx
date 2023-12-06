@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
 import { FiAlignRight, FiX } from "react-icons/fi";
+import climate from "../assets/climate.png";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import { useState } from "react";
 
@@ -21,7 +23,7 @@ const NavButton = () => {
         onClick={() => setMobileMenuOpen(true)}
       >
         <span className="sr-only">Open main menu</span>
-        <FiAlignRight className="h-6 w-" aria-hidden="true" />
+        <FiAlignRight className="h-6 w-16" aria-hidden="true" />
       </button>
 
       <Dialog
@@ -37,7 +39,7 @@ const NavButton = () => {
               to="/"
               className="text-3xl bg-clip-text max-md:text-2xl max-sm:text-xl"
             >
-              Watcher
+              <img src={climate} className="w-2/3" alt="" />
             </Link>
             <button
               type="button"
@@ -65,12 +67,7 @@ const NavButton = () => {
                 ))}
               </div>
               <div className="py-6">
-                <Link
-                  to="/app"
-                  className="shadow-cs-4sm py-3 px-2 text-white rounded-lg bg-cs-light-purple flex items-center gap-2"
-                >
-                  Dashboard
-                </Link>
+                <ConnectButton />
               </div>
             </div>
           </div>

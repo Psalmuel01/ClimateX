@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="px-8 py-6 lg:px-10 lg:py-4">
       <Header />
       <Hero />
     </div>
