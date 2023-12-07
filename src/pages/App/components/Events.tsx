@@ -29,7 +29,7 @@ const Events = () => {
         </div>
         <div className="text-black text-xs font-bold self-center">Offline</div>
       </div>
-      <div className="flex flex-col w-full justify-between mt-3 p-2.5">
+      <div className="flex flex-col w-full justify-between mt-3 py-2.5">
         <div className="flex w-full justify-between">
           <div className="flex justify-between gap-7">
             <img src={img1} className="object-contain" />
