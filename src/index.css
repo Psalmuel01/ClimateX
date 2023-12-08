@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Raleway", sans-serif;
+@layer base {
+  body {
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+@layer components {
+  .form-item {
+    @apply grid gap-1;
+  }
+
+  .form-item label {
+    @apply text-xs;
+  }
+
+  .form-item input {
+    @apply w-full p-2 px-4 border border-gray-300 focus:border-[#152A10] focus:outline-none rounded-md;
+  }
 }

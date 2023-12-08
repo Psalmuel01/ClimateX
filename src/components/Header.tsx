@@ -1,7 +1,7 @@
 import NavButton from "./NavButton";
 import { Link } from "react-router-dom";
 import climate from "../assets/climate.png";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Header = () => {
   return (
@@ -23,7 +23,7 @@ const Header = () => {
             <div className="text-lg">Resources</div>
           </div>
           <div className="max-lg:hidden">
-            <ConnectButton />
+            <ConnectWallet />
           </div>
         </div>
       </nav>

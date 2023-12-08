@@ -1,6 +1,7 @@
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 import woods from "../assets/woods.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
             Make Earth a better place{" "}
             <span className="font-bold">Earn tokens</span>
           </h1>
-          <div className="flex gap-3 text-xl">
+          <Link to="/app" className="flex gap-3 text-xl">
             <p className="bg-cs-pry text-white px-5 py-2 rounded-3xl">
               Get started
             </p>
@@ -19,7 +20,7 @@ const Hero = () => {
               <IoPlayCircleOutline />
               See demo
             </p>
-          </div>
+          </Link>
         </div>
         <div>
           <img src={woods} alt="" />
