@@ -8,15 +8,21 @@ const Impact = () => {
       <div className="text-neutral-900 text-2xl font-bold w-full">
         Confirmed Impact
       </div>
-      <div className="flex w-full flex-col justify-center mt-6 pl-7 pr-10 py-4 rounded-3xl max-md:px-5 bg-gradient-to-b from-[#787344] via-[rgba(176,174,154,0.50)] to-[rgba(217,217,217,0)]">
+      <div
+        className="flex w-full flex-col justify-center mt-6 pl-7 pr-10 py-4 rounded-3xl max-md:px-5"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, #254A1C 13.27%, #799E4C 69.33%, #DAFF83 113.48%)",
+        }}
+      >
         <div className="flex w-full justify-between gap-5 max-md:flex-wrap">
           <div className="flex justify-between gap-5">
             <img src={like} className="object-contain w-10" />
-            <div className="flex flex-col my-auto">
+            <div className="text-white flex flex-col my-auto">
               <div className="text-lg font-semibold">
                 Number of validated impact
               </div>
-              <div className="text-white mt-4">April</div>
+              <div className="mt-4">April</div>
             </div>
           </div>
           <div className="justify-between flex gap-5 my-auto pr-1.5 max-md:flex-wrap">
