@@ -1,11 +1,12 @@
 import chart from "../../../assets/chart.png";
-import clipper from "../../../assets/clipper.png";
+
 import swap from "../../../assets/swap.png";
 import { FaPlus } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import Modal from "./Modal";
 import AddImpact from "./AddImpact";
 import { useState } from "react";
+import UserImpacts from "./UserImpacts";
 
 const initCB = () => {};
 
@@ -63,21 +64,8 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-10">
-        <p className="font-bold text-lg mb-5">Products you may like</p>
-        <div className="flex">
-          <div>
-            <img src={clipper} alt="" />
-          </div>
-          <div>
-            <img src={clipper} alt="" />
-          </div>
-          <div>
-            <img src={clipper} alt="" />
-          </div>
-          <div>
-            <img src={clipper} alt="" />
-          </div>
-        </div>
+        <p className="font-bold text-2xl mb-5">Your Impact</p>
+        <UserImpacts />
       </div>
     </div>
   );

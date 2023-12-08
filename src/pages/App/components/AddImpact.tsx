@@ -105,10 +105,11 @@ const AddImpact = ({ done }: { done: () => void }) => {
       <div className="form-item">
         <label htmlFor="noOfImpact">Number of Impacts</label>
         <input
-          type="noOfImpact"
-          placeholder="Enter description"
+          type="number"
+          placeholder="Enter number of impacts"
           name="noOfImpact"
           id="noOfImpact"
+          min={0}
           onChange={(e) =>
             setFormData({ ...formData, noOfImpact: e.target.value })
           }
