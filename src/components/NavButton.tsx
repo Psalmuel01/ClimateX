@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
 import { FiAlignRight, FiX } from "react-icons/fi";
 import climate from "../assets/climate.png";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import { useState } from "react";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const navigation = [
   { name: "About", to: "/" },
@@ -67,7 +67,7 @@ const NavButton = () => {
                 ))}
               </div>
               <div className="py-6">
-                <ConnectButton />
+                <ConnectWallet />
               </div>
             </div>
           </div>

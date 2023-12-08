@@ -1,6 +1,5 @@
+import { ConnectWallet } from "@thirdweb-dev/react";
 import { IoFilter, IoSearchOutline } from "react-icons/io5";
-import avatar from "../assets/avatar.png";
-import { RiArrowDropDownLine } from "react-icons/ri";
 
 const DashHeader = () => {
   return (
@@ -17,12 +16,7 @@ const DashHeader = () => {
           <p>Search</p> */}
         <IoFilter size={18} />
       </div>
-      <div className="flex items-center gap-3">
-        <img src={avatar} className="w-1/6" alt="" />
-        <p className="flex">
-          0x1234...6w1t78 <RiArrowDropDownLine size={20} />
-        </p>
-      </div>
+      <ConnectWallet />
     </div>
   );
 };
