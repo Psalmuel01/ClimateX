@@ -1,13 +1,10 @@
 import {
-  IoPlayCircle,
   IoPlayCircleOutline,
   IoBagHandleOutline,
-  IoBagHandle,
   IoHome,
-  IoHomeOutline,
 } from "react-icons/io5";
 import { MdNotificationAdd } from "react-icons/md";
-import { BsCalendar2Event, BsCalendar2EventFill } from "react-icons/bs";
+import { BsCalendar2Event } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
