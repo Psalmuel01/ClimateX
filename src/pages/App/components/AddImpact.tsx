@@ -75,7 +75,7 @@ const AddImpact = ({ done }: { done: () => void }) => {
   };
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4 w-full max-w-md">
       <div className="form-item">
         <label htmlFor="title">Title</label>
         <input

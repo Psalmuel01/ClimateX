@@ -1,6 +1,7 @@
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Card from "../../../components/Card";
 import AddMarketplaceItem from "./AddMarketplaceItem";
+import ViewProduct from "./ViewProduct";
 import { ContractContext } from "../../../contexts/ContractContext";
 import { useContext, useState } from "react";
 import Modal from "./Modal";
@@ -50,10 +51,19 @@ const Marketplace = () => {
           <></>
         )}
       </div>
-      <div className="bg-white flex flex-wrap justify-between w-full mt-6 rounded-xl max-md:max-w-full">
+      <div className="bg-white flex flex-wrap gap-4 w-full mt-6 rounded-xl max-md:max-w-full">
         {marketplaceData?.length > 0 ? (
-          marketplaceData.map((product) => (
-            <Card key={product.id} {...product} />
+          marketplaceData.map((product: Product) => (
+            <Modal
+              key={product.id}
+              modalButton={<Card {...product} />}
+              title="View product"
+              setCallBack={() => {}}
+              refetch={() => {}}
+              buttonWrapperClass="w-full max-w-xs "
+            >
+              <ViewProduct {...product} />
+            </Modal>
           ))
         ) : (
           <div className="grid place-content-center w-full text-2xl h-[60vh]">

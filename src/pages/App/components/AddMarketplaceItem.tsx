@@ -51,7 +51,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
       args: [
         formData._name,
         formData._description,
-        formData._price,
+        Number(formData._price) * 10 ** 18,
         formData._image,
         formData.available,
       ],
