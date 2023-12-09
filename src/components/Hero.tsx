@@ -9,8 +9,8 @@ const Hero = () => {
       <div className="md:flex max-md:text-center">
         <div className="flex flex-col my-auto gap-6 max-md:mb-10">
           <h1 className="font-medium text-5xl max-md:text-4xl w-2/3 max-md:w-full leading-relaxed  max-md:leading-relaxed">
-            Make Earth a better place{" "}
-            <span className="font-bold">Earn tokens</span>
+            A Sustainable Future through{" "}
+            <span className="font-bold">Incentivization</span>
           </h1>
           <div className="flex gap-3 text-xl max-md:text-lg max-md:justify-center">
             <Link
