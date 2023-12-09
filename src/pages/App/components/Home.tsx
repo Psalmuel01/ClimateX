@@ -30,7 +30,7 @@ const Home = () => {
           <img src={chart} alt="" className="w-full" />
         </div>
         <div className="flex-1 grid gap-5">
-          <div className="flex items-center gap-5 p-6 bg-cs-pry text-white rounded-[40px] ">
+          <div className="flex items-center gap-5 py-3 p-6 bg-cs-pry text-white rounded-[40px] ">
             <Modal
               modalButton={
                 <div className="bg-[#D9D9D933] p-6 rounded-3xl hover:bg-gray-600 cursor-pointer">
