@@ -15,12 +15,14 @@ const Modal = ({
   children,
   setCallBack,
   refetch,
+  buttonWrapperClass,
 }: {
   modalButton: ReactNode;
   title: string;
   children: ReactNode;
   setCallBack: Dispatch<SetStateAction<() => void>>;
   refetch: () => void;
+  buttonWrapperClass?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +43,9 @@ const Modal = ({
 
   return (
     <>
-      <div onClick={openModal}>{modalButton}</div>
+      <div className={buttonWrapperClass || ""} onClick={openModal}>
+        {modalButton}
+      </div>
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -68,7 +72,7 @@ const Modal = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-max transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"

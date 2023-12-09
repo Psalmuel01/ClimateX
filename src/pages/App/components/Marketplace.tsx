@@ -1,66 +1,34 @@
-import unsplash1 from "../../../assets/unsplash1.png";
-import unsplash2 from "../../../assets/unsplash2.png";
-import unsplash3 from "../../../assets/unsplash3.png";
-import unsplash4 from "../../../assets/unsplash4.png";
-import unsplash5 from "../../../assets/unsplash5.png";
-import unsplash6 from "../../../assets/unsplash6.png";
-import unsplash7 from "../../../assets/unsplash7.png";
-import unsplash8 from "../../../assets/unsplash8.png";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Card from "../../../components/Card";
 import AddMarketplaceItem from "./AddMarketplaceItem";
+import ViewProduct from "./ViewProduct";
 import { ContractContext } from "../../../contexts/ContractContext";
 import { useContext, useState } from "react";
 import Modal from "./Modal";
+import { useContractRead } from "@thirdweb-dev/react";
+
+export interface Product {
+  id: bigint;
+  name: string;
+  description: string;
+  price: bigint;
+  sold: bigint;
+  image: string;
+  availableItems: bigint;
+}
 
 const Marketplace = () => {
-  const cardData = [
-    {
-      src: unsplash1,
-      title: "The Holy Grail",
-      type: "Fixed price",
-    },
-    {
-      src: unsplash2,
-      title: "Mirror Glass Effect",
-      type: "Open bidding",
-    },
-    {
-      src: unsplash3,
-      title: "Neon in Life",
-      type: "Fixed price",
-    },
-    {
-      src: unsplash4,
-      title: "Oil Source",
-      type: "Fixed price",
-    },
-    {
-      src: unsplash5,
-      title: "World Surface",
-      type: "Open bidding",
-    },
-    {
-      src: unsplash6,
-      title: "Infinity Door",
-      type: "Fixed price",
-    },
-    {
-      src: unsplash7,
-      title: "Biconditional Effect",
-      type: "Fixed price",
-    },
-    {
-      src: unsplash8,
-      title: "Motion View",
-      type: "Open bidding",
-    },
-  ];
-
-  const { isAdmin } = useContext(ContractContext);
+  const { isAdmin, marketplaceContract } = useContext(ContractContext);
   const [addMarketCallBack, setAddMarketCallBack] = useState<() => void>(
     () => () => {}
   );
+
+  const { data: marketplaceData } = useContractRead(
+    marketplaceContract,
+    "showProducts"
+  );
+
+  console.log({ marketplaceData });
 
   return (
     <div className="justify-center flex flex-col">
@@ -85,10 +53,25 @@ const Marketplace = () => {
           <></>
         )}
       </div>
-      <div className="bg-white flex flex-wrap justify-between w-full mt-6 rounded-xl max-md:max-w-full">
-        {cardData.map((chain, index) => (
-          <Card key={index} {...chain} />
-        ))}
+      <div className="bg-white flex flex-wrap gap-4 w-full mt-6 rounded-xl max-md:max-w-full">
+        {marketplaceData?.length > 0 ? (
+          marketplaceData.map((product: Product) => (
+            <Modal
+              key={product.id}
+              modalButton={<Card {...product} />}
+              title={""}
+              setCallBack={() => {}}
+              refetch={() => {}}
+              buttonWrapperClass="w-full max-w-xs "
+            >
+              <ViewProduct {...product} />
+            </Modal>
+          ))
+        ) : (
+          <div className="grid place-content-center w-full text-2xl h-[60vh]">
+            <p>No products in the Marketplace</p>
+          </div>
+        )}
       </div>
       <div className="flex w-full items-center justify-between gap-5 mt-8 pr-2.5 max-md:max-w-full max-md:flex-wrap">
         <div className="text-sm my-auto">Results 1 - 20 out of 90</div>
