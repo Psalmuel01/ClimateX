@@ -65,7 +65,9 @@ const Marketplace = () => {
   return (
     <div className="justify-center flex flex-col">
       <div className="flex w-full justify-between gap-5 items-start max-md:max-w-full max-md:flex-wrap">
-        <div className="text-2xl font-medium">Market place</div>
+        <div className="text-2xl max-md:text-xl max-md:ml-8 font-bold">
+          Market place
+        </div>
         {isAdmin ? (
           <Modal
             modalButton={

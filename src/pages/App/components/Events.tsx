@@ -8,11 +8,11 @@ import next from "../../../assets/next.png";
 
 const Events = () => {
   return (
-    <div className="justify-center items-center bg-white flex flex-col pt-3 px-3">
+    <div className="justify-center items-center bg-white flex flex-col px-3">
       <div className="justify-between flex w-full gap-5">
         <div className="items-center flex justify-between gap-4">
-          <BsCalendar2Event size={24} />
-          <div className="text-neutral-800 text-2xl font-bold my-auto">
+          <BsCalendar2Event size={20} />
+          <div className="text-neutral-800 text-2xl max-md:text-xl font-bold my-auto">
             Events
           </div>
         </div>
@@ -96,9 +96,9 @@ const Events = () => {
         </div>
       </div>
       <div className="justify-between self-center flex w-full gap-5 mt-10">
-        <div className="flex justify-between gap-4">
+        <div className="flex items-center justify-between gap-4">
           <FaMapMarkerAlt />
-          <div className="text-neutral-800 text-2xl font-bold my-auto">
+          <div className="text-neutral-800 text-2xl max-md:text-xl font-bold my-auto">
             Live map
           </div>
         </div>

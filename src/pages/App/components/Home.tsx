@@ -24,17 +24,17 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex gap-8">
+      <div className="md:flex gap-8">
         {/* chart */}
-        <div className="flex-1">
+        <div className="flex-1 max-md:mb-5">
           <img src={chart} alt="" className="w-full" />
         </div>
         <div className="flex-1 grid gap-5">
           <div className="flex items-center gap-5 py-3 p-6 bg-cs-pry text-white rounded-[40px] ">
             <Modal
               modalButton={
-                <div className="bg-[#D9D9D933] p-6 rounded-3xl hover:bg-gray-600 cursor-pointer">
-                  <FaPlus size={48} />
+                <div className="bg-[#D9D9D933] p-6 md:text-4xl rounded-3xl hover:bg-gray-600 cursor-pointer">
+                  <FaPlus />
                 </div>
               }
               title="Add Impact"
@@ -51,12 +51,12 @@ const Home = () => {
           </div>
           <div className="bg-[#E1FF99] grid  gap-5 rounded-[40px] ">
             <div className=" flex justify-start gap-10 items-center w-full p-4 rounded-[40px] shadow-lg border-2 border-[#ffffff]">
-              <div className="bg-gray-500 text-white  p-6 rounded-3xl">
-                <img src={swap} className="w-12" alt="" />
+              <div className="bg-gray-500 text-white p-6 max-md:py-4 rounded-3xl">
+                <img src={swap} className="max-md:w-6" alt="" />
               </div>
               <p className="font-semibold">Climatoks</p>
             </div>
-            <div className="w-full p-7 pl-12 pb-9">
+            <div className="w-full p-7 px-10 max-md:py-3 max-md:mb-4">
               <p className="text-sm">Total Tokens</p>
               <div className="flex items-center justify-between mt-3">
                 <p className="font-bold text-2xl">
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-10">
-        <p className="font-bold text-2xl mb-5">Your Impact</p>
+        <p className="font-bold text-2xl max-md:text-xl mb-5">Your Impact</p>
         <UserImpacts />
       </div>
     </div>

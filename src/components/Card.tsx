@@ -8,7 +8,7 @@ const Card = ({
   type: string;
 }) => {
   return (
-    <div className="flex flex-col w-[24%] border rounded-lg mb-5">
+    <div className="flex flex-col md:w-[24%] mb-5 max-md:mx-auto border rounded-lg">
       <img src={src} alt="" />
       <div className="bg-white flex w-full flex-col py-4 rounded-none items-start">
         <div className="flex flex-col ml-5 max-md:ml-2.5">
