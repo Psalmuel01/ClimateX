@@ -4,12 +4,30 @@ import AddMarketplaceItem from "./AddMarketplaceItem";
 import { ContractContext } from "../../../contexts/ContractContext";
 import { useContext, useState } from "react";
 import Modal from "./Modal";
+import { useContractRead } from "@thirdweb-dev/react";
+
+export interface Product {
+  id: bigint;
+  name: string;
+  description: string;
+  price: bigint;
+  sold: bigint;
+  image: string;
+  availableItems: bigint;
+}
 
 const Marketplace = () => {
-  const { isAdmin } = useContext(ContractContext);
+  const { isAdmin, marketplaceContract } = useContext(ContractContext);
   const [addMarketCallBack, setAddMarketCallBack] = useState<() => void>(
     () => () => {}
   );
+
+  const { data: marketplaceData } = useContractRead(
+    marketplaceContract,
+    "showProducts"
+  );
+
+  console.log({ marketplaceData });
 
   return (
     <div className="justify-center flex flex-col">
@@ -33,14 +51,15 @@ const Marketplace = () => {
         )}
       </div>
       <div className="bg-white flex flex-wrap justify-between w-full mt-6 rounded-xl max-md:max-w-full">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {marketplaceData?.length > 0 ? (
+          marketplaceData.map((product) => (
+            <Card key={product.id} {...product} />
+          ))
+        ) : (
+          <div className="grid place-content-center w-full text-2xl h-[60vh]">
+            <p>No products in the Marketplace</p>
+          </div>
+        )}
       </div>
       <div className="flex w-full items-center justify-between gap-5 mt-8 pr-2.5 max-md:max-w-full max-md:flex-wrap">
         <div className="text-sm my-auto">Results 1 - 20 out of 90</div>
