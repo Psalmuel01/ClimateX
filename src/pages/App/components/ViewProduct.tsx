@@ -25,6 +25,7 @@ const ViewProduct = ({
     toast.loading("Buying...");
     try {
       await buyProduct?.({ args: [Number(id), 1] });
+      toast.dismiss();
       toast.success("Bought successfully");
     } catch (err) {
       toast.dismiss();
