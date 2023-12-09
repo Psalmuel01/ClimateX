@@ -5,8 +5,10 @@ import { FaPlus } from "react-icons/fa6";
 import { MdNavigateNext } from "react-icons/md";
 import Modal from "./Modal";
 import AddImpact from "./AddImpact";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import UserImpacts from "./UserImpacts";
+import { ContractContext } from "../../../contexts/ContractContext";
+import { useContractRead } from "@thirdweb-dev/react";
 
 const initCB = () => {};
 
@@ -14,7 +16,11 @@ const Home = () => {
   const [addImpactCallBack, setAddImpactCallBack] =
     useState<() => void>(initCB);
 
-  console.log({ addImpactCallBack });
+  const { rewardTokenContract, address } = useContext(ContractContext);
+
+  const { data: balance } = useContractRead(rewardTokenContract, "balanceOf", [
+    address,
+  ]);
 
   return (
     <div>
@@ -53,7 +59,9 @@ const Home = () => {
             <div className="w-full p-7 pl-12 pb-9">
               <p className="text-sm">Total Tokens</p>
               <div className="flex items-center justify-between mt-3">
-                <p className="font-bold text-2xl">198,500</p>
+                <p className="font-bold text-2xl">
+                  {Number(balance) / 10 ** 18 || 0}
+                </p>
                 <MdNavigateNext
                   size={26}
                   className="border border-black rounded-full p-0.5"

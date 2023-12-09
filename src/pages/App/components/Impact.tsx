@@ -259,7 +259,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
           />
           <div className="flex flex-col my-auto">
             <div className="font-bold">{title}</div>
-            <div className="text-sm mt-2">{description}</div>
+            <div className="text-sm mt-2 truncate w-80">{description}</div>
           </div>
         </div>
         <div className="flex gap-1.5 my-auto flex-1">
@@ -285,10 +285,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
           </button>
         </div>
         <div className="text-xs font-semibold my-auto flex-1">{location}</div>
-        <div className="justify-center items-center flex-col my-auto flex-1">
-          <div className="text-neutral-900 text-lg font-bold">14</div>
-          <div className="text-neutral-600 text-xs mt-1">Validations</div>
-        </div>
+
         <div className="justify-center items-center text-white bg-lime-950 flex gap-1 my-auto p-2.5 rounded-3xl">
           {renderStatus()}
         </div>

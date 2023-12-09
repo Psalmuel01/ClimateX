@@ -45,7 +45,7 @@ const UserImpacts = () => {
                 className="w-full  aspect-square object-cover object-center"
               />
               <p>{title}</p>
-              <p>{description}</p>
+              <p className="truncate">{description}</p>
             </div>
           ))
         ) : (

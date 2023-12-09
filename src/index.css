@@ -19,7 +19,8 @@
     @apply text-xs;
   }
 
-  .form-item input {
-    @apply w-full p-2 px-4 border border-gray-300 focus:border-[#152A10] focus:outline-none rounded-md;
+  .form-item input,
+  .form-item textarea {
+    @apply w-full p-2 px-4 border border-gray-300 focus:border-[#152A10] focus:outline-none rounded-md resize-none;
   }
 }

@@ -1,26 +1,24 @@
-import { useStorageUpload, useContractWrite } from "@thirdweb-dev/react";
+import { useContractWrite, useStorageUpload } from "@thirdweb-dev/react";
 import { useContext, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import { MdUpload } from "react-icons/md";
 import { ContractContext } from "../../../contexts/ContractContext";
 
-const AddImpact = ({ done }: { done: () => void }) => {
-  const { daoContract } = useContext(ContractContext);
-  // title, noOfImpact, _location, _description, _imageUrl
+const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
+  const { marketplaceContract } = useContext(ContractContext);
+
   const [file, setFile] = useState<File>();
   const [formData, setFormData] = useState({
-    title: "",
-    noOfImpact: "",
-    _location: "",
+    _name: "",
     _description: "",
-    _imageUrl: "",
+    _price: "",
+    _image: "",
+    available: "",
   });
 
   const { mutateAsync: upload } = useStorageUpload();
-  const { mutateAsync: addImpact, isLoading: impactLoading } = useContractWrite(
-    daoContract,
-    "createImpact"
-  );
+  const { mutateAsync: uploadProduct, isLoading: impactLoading } =
+    useContractWrite(marketplaceContract, "uploadProduct");
 
   const uploadToIpfs = async () => {
     toast.loading("Uploading...");
@@ -29,18 +27,18 @@ const AddImpact = ({ done }: { done: () => void }) => {
       options: { uploadWithGatewayUrl: true, uploadWithoutDirectory: true },
     });
     toast.dismiss();
-    setFormData({ ...formData, _imageUrl: uploadUrl[0] });
+    setFormData({ ...formData, _image: uploadUrl[0] });
     setFile(undefined);
     toast.success("Uploaded successfully");
   };
 
   const handleFormCheck = useMemo(() => {
     if (
-      formData.title.length > 3 &&
-      formData.noOfImpact.length > 0 &&
+      formData._name.length > 3 &&
       formData._description.length > 3 &&
-      formData._location.length > 3 &&
-      formData._imageUrl.length > 3
+      formData._price.length > 0.01 &&
+      formData._image.length > 3 &&
+      formData.available.length > 0
     )
       return false;
 
@@ -49,13 +47,13 @@ const AddImpact = ({ done }: { done: () => void }) => {
 
   const createImpact = async () => {
     toast.loading("Creating impact...");
-    const tx = await addImpact({
+    const tx = await uploadProduct({
       args: [
-        formData.title,
-        formData.noOfImpact,
-        formData._location,
+        formData._name,
         formData._description,
-        formData._imageUrl,
+        formData._price,
+        formData._image,
+        formData.available,
       ],
     });
 
@@ -63,14 +61,14 @@ const AddImpact = ({ done }: { done: () => void }) => {
       toast.dismiss();
       toast.success("Impact created successfully");
       setFormData({
-        title: "",
-        noOfImpact: "",
-        _location: "",
+        _name: "",
         _description: "",
-        _imageUrl: "",
+        _price: "",
+        _image: "",
+        available: "",
       });
       setFile(undefined);
-      if (done) done();
+      if (callBack) callBack();
     }
   };
 
@@ -80,11 +78,11 @@ const AddImpact = ({ done }: { done: () => void }) => {
         <label htmlFor="title">Title</label>
         <input
           type="text"
-          placeholder="Enter title"
+          placeholder="Enter Product Name"
           name="title"
           id="title"
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          value={formData.title}
+          onChange={(e) => setFormData({ ...formData, _name: e.target.value })}
+          value={formData._name}
         />
       </div>
 
@@ -103,31 +101,32 @@ const AddImpact = ({ done }: { done: () => void }) => {
       </div>
 
       <div className="form-item">
-        <label htmlFor="noOfImpact">Number of Impacts</label>
+        <label htmlFor="price">Number of Impacts</label>
         <input
           type="number"
-          placeholder="Enter number of impacts"
-          name="noOfImpact"
-          id="noOfImpact"
-          min={0}
-          onChange={(e) =>
-            setFormData({ ...formData, noOfImpact: e.target.value })
-          }
-          value={formData.noOfImpact}
+          placeholder="Enter Price e.g (0.0001)"
+          name="price"
+          id="price"
+          min={0.01}
+          step={0.01}
+          onChange={(e) => setFormData({ ...formData, _price: e.target.value })}
+          value={formData._price}
         />
       </div>
 
       <div className="form-item">
-        <label htmlFor="location">Location</label>
+        <label htmlFor="price">Number of Impacts</label>
         <input
-          type="text"
-          placeholder="Enter location"
-          name="location"
-          id="location"
+          type="number"
+          placeholder="Number of Items"
+          name="item"
+          id="item"
+          min={1}
+          step={1}
           onChange={(e) =>
-            setFormData({ ...formData, _location: e.target.value })
+            setFormData({ ...formData, available: e.target.value })
           }
-          value={formData._location}
+          value={formData.available}
         />
       </div>
 
@@ -153,7 +152,7 @@ const AddImpact = ({ done }: { done: () => void }) => {
 
         {file ? (
           <p>Upload image to preview</p>
-        ) : formData._imageUrl ? (
+        ) : formData._image ? (
           <p>
             Image uploaded successfully, you can change by uploading a new one
           </p>
@@ -163,10 +162,10 @@ const AddImpact = ({ done }: { done: () => void }) => {
       </div>
 
       <div className="w-full">
-        {formData._imageUrl && (
+        {formData._image && (
           <div className="w-full h-56 overflow-hidden">
             <img
-              src={formData._imageUrl}
+              src={formData._image}
               alt=""
               className={`w-full h-full ${file ? "opacity-10" : ""}`}
             />
@@ -185,4 +184,4 @@ const AddImpact = ({ done }: { done: () => void }) => {
   );
 };
 
-export default AddImpact;
+export default AddMarketplaceItem;

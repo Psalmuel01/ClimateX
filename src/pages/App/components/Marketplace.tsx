@@ -1,14 +1,36 @@
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Card from "../../../components/Card";
+import AddMarketplaceItem from "./AddMarketplaceItem";
+import { ContractContext } from "../../../contexts/ContractContext";
+import { useContext, useState } from "react";
+import Modal from "./Modal";
 
 const Marketplace = () => {
+  const { isAdmin } = useContext(ContractContext);
+  const [addMarketCallBack, setAddMarketCallBack] = useState<() => void>(
+    () => () => {}
+  );
+
   return (
     <div className="justify-center flex flex-col">
       <div className="flex w-full justify-between gap-5 items-start max-md:max-w-full max-md:flex-wrap">
         <div className="text-2xl font-medium">Market place</div>
-        <div className="text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
-          Create new item
-        </div>
+        {isAdmin ? (
+          <Modal
+            modalButton={
+              <div className="text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
+                Create new item
+              </div>
+            }
+            title="Create new item"
+            setCallBack={setAddMarketCallBack}
+            refetch={() => {}}
+          >
+            <AddMarketplaceItem callBack={addMarketCallBack} />
+          </Modal>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="bg-white flex flex-wrap justify-between w-full mt-6 rounded-xl max-md:max-w-full">
         <Card />

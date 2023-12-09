@@ -106,9 +106,8 @@ const Events = () => {
       <div className="w-full mt-4">
         <iframe
           title="iframe"
-          width="1024"
           height="400"
-          className="rounded-2xl"
+          className="rounded-2xl w-full"
           src="https://maps.google.com/maps?width=408&amp;height=340&amp;hl=en&amp;q=Ikeja,%20Lagos+(ClimateX)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.maps.ie/distance-area-calculator.html">
