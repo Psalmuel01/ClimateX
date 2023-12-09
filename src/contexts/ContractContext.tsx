@@ -23,9 +23,9 @@ export const ContractContext = createContext<{
   address: undefined,
 });
 
-const DAO_TOKEN_CONTRACT = "0x8d449A8B789E6f8BfF8a357114b30Ee7B4E5B31D";
-const REWARD_TOKEN_CONTRACT = "0xDa10d7D13C2Ef59a2FbEb9E1519fE6bf25aFFCE6";
-const DAO_CONTRACT = "0x58Bfc9b36cEAEf441efadaC7b126eDe22D17e1f6";
+const DAO_TOKEN_CONTRACT = "0xe736ddfd9eaf9a58a859ad2210e748463f297ac1";
+const REWARD_TOKEN_CONTRACT = "0x90d1e60fc055c1569be1a07c2d13004d65a859c1";
+const DAO_CONTRACT = "0x519cd0e5041e8b68027abadd9f42793249e485a4";
 
 export const ContractContextProvider = ({
   children,

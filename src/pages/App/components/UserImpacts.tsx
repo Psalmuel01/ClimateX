@@ -3,6 +3,11 @@ import { ContractContext } from "../../../contexts/ContractContext";
 import { ConnectWallet, useContractRead } from "@thirdweb-dev/react";
 import { useAddress } from "@thirdweb-dev/react";
 
+enum Status {
+  Pending,
+  Approved,
+}
+
 export interface ImpactRewardee {
   id_: bigint;
   owner: string;
@@ -13,6 +18,7 @@ export interface ImpactRewardee {
   nayvotes: bigint;
   noOfImpacts: bigint;
   imageUrl: string;
+  status: Status;
 }
 
 const UserImpacts = () => {
@@ -33,7 +39,11 @@ const UserImpacts = () => {
               className="rounded-xl border-[#376F2A33] shadow-md border p-4 w-72"
               key={id_}
             >
-              <img src={imageUrl} alt="" className="w-full  aspect-square" />
+              <img
+                src={imageUrl}
+                alt=""
+                className="w-full  aspect-square object-cover object-center"
+              />
               <p>{title}</p>
               <p>{description}</p>
             </div>
