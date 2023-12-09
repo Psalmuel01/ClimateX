@@ -17,7 +17,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
   });
 
   const { mutateAsync: upload } = useStorageUpload();
-  const { mutateAsync: uploadProduct, isLoading: impactLoading } =
+  const { mutateAsync: uploadProduct, isLoading: productLoading } =
     useContractWrite(marketplaceContract, "uploadProduct");
 
   const uploadToIpfs = async () => {
@@ -45,7 +45,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
     return true;
   }, [formData]);
 
-  const createImpact = async () => {
+  const createProduct = async () => {
     toast.loading("Creating impact...");
     const tx = await uploadProduct({
       args: [
@@ -175,10 +175,10 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
 
       <button
         className="bg-[#E1FF99] disabled:opacity-50  disabled:hover:text-black  disabled:cursor-not-allowed disabled:hover:bg-[#E1FF99] hover:bg-green-950 hover:text-white rounded-xl w-full  px-4 py-2"
-        disabled={handleFormCheck || impactLoading}
-        onClick={createImpact}
+        disabled={handleFormCheck || productLoading}
+        onClick={createProduct}
       >
-        Add Impact
+        Add Product
       </button>
     </div>
   );

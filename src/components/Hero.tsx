@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
       <div className="md:flex justify-between items-center">
         <div className="max-md:mb-10">
-          <div className="font-semibold text-2xl rounded-3xl w-fit py-10 px-5 bg-gradient-to-t from-amber-800 via-gray-500 to-transparent">
+          <div className="font-semibold text-2xl rounded-3xl w-fit py-10 px-5 bg-gradient-to-b from-[#787344] via-[rgba(176,174,154,0.50)] to-[rgba(217,217,217,0)]">
             1 Million+ trees planted
           </div>
           <div className="flex gap-3 pl-6">

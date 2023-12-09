@@ -11,9 +11,9 @@ const Sidebar = () => {
   return (
     <div className="fixed flex flex-col items-center justify-between py-10 bg-cs-pry text-white text-3xl min-h-[calc(100vh-48px)] w-20 rounded-3xl">
       <div className="flex flex-col gap-16">
-        <div>
+        <Link to="/">
           <MdNotificationAdd />
-        </div>
+        </Link>
         <div className="flex flex-col gap-8">
           <Link to="/app">
             <IoHome />
