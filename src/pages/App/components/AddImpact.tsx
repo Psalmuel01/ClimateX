@@ -91,14 +91,14 @@ const AddImpact = ({ done }: { done: () => void }) => {
       <div className="form-item">
         <label htmlFor="description">Description</label>
         <textarea
-          placeholder="Enter description"
+          placeholder="Planted trees or Recycled bottles"
           name="description"
           id="description"
           onChange={(e) =>
             setFormData({ ...formData, _description: e.target.value })
           }
           value={formData._description}
-          rows={5}
+          rows={1}
         />
       </div>
 
@@ -106,7 +106,7 @@ const AddImpact = ({ done }: { done: () => void }) => {
         <label htmlFor="noOfImpact">Number of Impacts</label>
         <input
           type="number"
-          placeholder="Enter number of impacts"
+          placeholder="Enter number of trees/bottles"
           name="noOfImpact"
           id="noOfImpact"
           min={0}
@@ -115,6 +115,9 @@ const AddImpact = ({ done }: { done: () => void }) => {
           }
           value={formData.noOfImpact}
         />
+        <label className="text-red-500/80">
+          Impacts of less than 50 are not eligible to receive rewards
+        </label>
       </div>
 
       <div className="form-item">

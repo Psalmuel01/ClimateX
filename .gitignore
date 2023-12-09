@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 
+src/components/Card2.tsx
+src/pages/App/components/Marketplace2.tsx
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

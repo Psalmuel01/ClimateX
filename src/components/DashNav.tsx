@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
-import { FiAlignRight, FiX } from "react-icons/fi";
+import { FiAlignLeft, FiX } from "react-icons/fi";
 import logo from "../assets/logo.png";
 
 import { useState } from "react";
-import { ConnectWallet } from "@thirdweb-dev/react";
 
 const navigation = [
-  { name: "About", to: "/" },
-  { name: "FAQs", to: "#" },
-  { name: "Resources", to: "#" },
+  { name: "Home", to: "/app" },
+  { name: "Impact", to: "impact" },
+  { name: "Marketplace", to: "marketplace" },
+  { name: "Events", to: "events" },
 ];
 
-const NavButton = () => {
+const DashNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div>
       <button
         type="button"
-        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+        className="md:hidden -m-2.5 inline-flex items-center justify-center rounded-md pt-5"
         onClick={() => setMobileMenuOpen(true)}
       >
         <span className="sr-only">Open main menu</span>
-        <FiAlignRight className="h-6 w-16" aria-hidden="true" />
+        <FiAlignLeft className="h-6 w-16" aria-hidden="true" />
       </button>
 
       <Dialog
@@ -33,7 +33,7 @@ const NavButton = () => {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="text-[#070B12] fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="text-[#070B12] fixed inset-y-0 left-0 z-50 w-1/2 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link
               to="/"
@@ -60,15 +60,15 @@ const NavButton = () => {
                   <Link
                     key={item.name}
                     to={item.to}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-sm leading-7 hover:bg-gray-50"
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
-                <ConnectWallet />
-              </div>
+              <Link to="/" className="py-6 text-sm font-semibold">
+                Landing
+              </Link>
             </div>
           </div>
         </Dialog.Panel>
@@ -77,4 +77,4 @@ const NavButton = () => {
   );
 };
 
-export default NavButton;
+export default DashNav;

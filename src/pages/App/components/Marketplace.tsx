@@ -1,3 +1,11 @@
+import unsplash1 from "../../../assets/unsplash1.png";
+import unsplash2 from "../../../assets/unsplash2.png";
+import unsplash3 from "../../../assets/unsplash3.png";
+import unsplash4 from "../../../assets/unsplash4.png";
+import unsplash5 from "../../../assets/unsplash5.png";
+import unsplash6 from "../../../assets/unsplash6.png";
+import unsplash7 from "../../../assets/unsplash7.png";
+import unsplash8 from "../../../assets/unsplash8.png";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Card from "../../../components/Card";
 import AddMarketplaceItem from "./AddMarketplaceItem";
@@ -33,11 +41,13 @@ const Marketplace = () => {
   return (
     <div className="justify-center flex flex-col">
       <div className="flex w-full justify-between gap-5 items-start max-md:max-w-full max-md:flex-wrap">
-        <div className="text-2xl font-medium">Market place</div>
+        <div className="text-2xl max-md:text-xl max-md:ml-8 font-bold">
+          Market place
+        </div>
         {isAdmin ? (
           <Modal
             modalButton={
-              <div className="text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
+              <div className="cursor-pointer text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
                 Create new item
               </div>
             }

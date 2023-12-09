@@ -42,9 +42,9 @@ const UserImpacts = () => {
               <img
                 src={imageUrl}
                 alt=""
-                className="w-full  aspect-square object-cover object-center"
+                className="w-full aspect-square object-cover object-center mb-5"
               />
-              <p>{title}</p>
+              <p className="font-semibold">{title}</p>
               <p className="truncate">{description}</p>
             </div>
           ))

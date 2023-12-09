@@ -8,11 +8,11 @@ import next from "../../../assets/next.png";
 
 const Events = () => {
   return (
-    <div className="justify-center items-center bg-white flex flex-col pt-3 px-3">
+    <div className="justify-center items-center bg-white flex flex-col px-3">
       <div className="justify-between flex w-full gap-5">
         <div className="items-center flex justify-between gap-4">
-          <BsCalendar2Event size={24} />
-          <div className="text-neutral-800 text-2xl font-bold my-auto">
+          <BsCalendar2Event size={20} />
+          <div className="text-neutral-800 text-2xl max-md:text-xl font-bold my-auto">
             Events
           </div>
         </div>
@@ -24,16 +24,18 @@ const Events = () => {
         </a>
       </div>
       <div className="bg-black bg-opacity-10 flex justify-between gap-5 mt-2 pl-2.5 pr-9 py-2.5 rounded-3xl">
-        <div className="text-white text-xs font-bold justify-center shadow-sm bg-lime-950 px-6 py-2.5 rounded-xl">
+        <div className="cursor-pointer text-white text-xs font-bold justify-center shadow-sm bg-lime-950 px-6 py-2.5 rounded-xl">
           Online
         </div>
-        <div className="text-black text-xs font-bold self-center">Offline</div>
+        <div className="cursor-pointer text-black text-xs font-bold self-center">
+          Offline
+        </div>
       </div>
       <div className="flex flex-col w-full justify-between mt-3 py-2.5">
         <div className="flex w-full justify-between">
           <div className="flex justify-between gap-7">
             <img src={img1} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -41,12 +43,15 @@ const Events = () => {
               <div className="text-zinc-800 text-xs mt-1">4th Nov, 2024</div>
             </div>
           </div>
-          <img src={next} className="object-contain" />
+          <img
+            src={next}
+            className="object-contain object-center w-5 my-auto"
+          />
         </div>
         <div className="flex w-full justify-between gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img2} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -62,7 +67,7 @@ const Events = () => {
         <div className="flex w-full justify-between gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img3} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -78,7 +83,7 @@ const Events = () => {
         <div className="justify-between flex w-full gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img4} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Waste recycling</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -92,10 +97,10 @@ const Events = () => {
           />
         </div>
       </div>
-      <div className="justify-between self-center flex w-full gap-5 mt-6">
-        <div className="flex justify-between gap-4">
+      <div className="justify-between self-center flex w-full gap-5 mt-10">
+        <div className="flex items-center justify-between gap-4">
           <FaMapMarkerAlt />
-          <div className="text-neutral-800 text-2xl font-bold my-auto">
+          <div className="text-neutral-800 text-2xl max-md:text-xl font-bold my-auto">
             Live map
           </div>
         </div>
@@ -108,7 +113,7 @@ const Events = () => {
           title="iframe"
           height="400"
           className="rounded-2xl w-full"
-          src="https://maps.google.com/maps?width=408&amp;height=340&amp;hl=en&amp;q=Ikeja,%20Lagos+(ClimateX)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=408&amp;height=340&amp;hl=en&amp;q=Ikeja,%20Lagos+(EcoRewards)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.maps.ie/distance-area-calculator.html">
             measure distance on map
