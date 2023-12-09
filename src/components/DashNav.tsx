@@ -19,7 +19,7 @@ const DashNav = () => {
     <div>
       <button
         type="button"
-        className="-m-2.5 inline-flex items-center justify-center rounded-md pt-5"
+        className="md:hidden -m-2.5 inline-flex items-center justify-center rounded-md pt-5"
         onClick={() => setMobileMenuOpen(true)}
       >
         <span className="sr-only">Open main menu</span>

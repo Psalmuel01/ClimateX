@@ -24,10 +24,12 @@ const Events = () => {
         </a>
       </div>
       <div className="bg-black bg-opacity-10 flex justify-between gap-5 mt-2 pl-2.5 pr-9 py-2.5 rounded-3xl">
-        <div className="text-white text-xs font-bold justify-center shadow-sm bg-lime-950 px-6 py-2.5 rounded-xl">
+        <div className="cursor-pointer text-white text-xs font-bold justify-center shadow-sm bg-lime-950 px-6 py-2.5 rounded-xl">
           Online
         </div>
-        <div className="text-black text-xs font-bold self-center">Offline</div>
+        <div className="cursor-pointer text-black text-xs font-bold self-center">
+          Offline
+        </div>
       </div>
       <div className="flex flex-col w-full justify-between mt-3 py-2.5">
         <div className="flex w-full justify-between">

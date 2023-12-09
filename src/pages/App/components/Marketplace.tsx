@@ -71,7 +71,7 @@ const Marketplace = () => {
         {isAdmin ? (
           <Modal
             modalButton={
-              <div className="text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
+              <div className="cursor-pointer text-white text-sm font-medium justify-center border bg-lime-950 px-5 py-2.5 rounded-lg border-solid border-lime-950">
                 Create new item
               </div>
             }
