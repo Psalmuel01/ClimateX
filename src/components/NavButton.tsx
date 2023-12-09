@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
 import { FiAlignRight, FiX } from "react-icons/fi";
-import climate from "../assets/climate.png";
+import logo from "../assets/logo.png";
 
 import { useState } from "react";
 import { ConnectWallet } from "@thirdweb-dev/react";
@@ -39,7 +39,7 @@ const NavButton = () => {
               to="/"
               className="text-3xl bg-clip-text max-md:text-2xl max-sm:text-xl"
             >
-              <img src={climate} className="w-2/3" alt="" />
+              <img src={logo} className="w-2/3" alt="" />
             </Link>
             <button
               type="button"

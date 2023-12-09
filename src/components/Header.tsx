@@ -1,6 +1,6 @@
 import NavButton from "./NavButton";
 import { Link } from "react-router-dom";
-import climate from "../assets/climate.png";
+import logo from "../assets/logo.png";
 import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="flex items-center justify-between" aria-label="Global">
         <div className="justify-between items-center self-center flex w-full gap-5 max-md:max-w-full max-md:flex-wrap">
           <Link to="/">
-            <img src={climate} className="w-3/4 max-md:w-2/3" alt="" />
+            <img src={logo} className="w-3/4 max-md:w-2/3" alt="" />
           </Link>
           <div className="flex lg:hidden">
             <NavButton />

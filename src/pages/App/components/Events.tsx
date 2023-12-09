@@ -113,7 +113,7 @@ const Events = () => {
           title="iframe"
           height="400"
           className="rounded-2xl w-full"
-          src="https://maps.google.com/maps?width=408&amp;height=340&amp;hl=en&amp;q=Ikeja,%20Lagos+(ClimateX)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=408&amp;height=340&amp;hl=en&amp;q=Ikeja,%20Lagos+(EcoRewards)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         >
           <a href="https://www.maps.ie/distance-area-calculator.html">
             measure distance on map

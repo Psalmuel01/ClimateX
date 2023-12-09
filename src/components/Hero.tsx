@@ -46,11 +46,12 @@ const Hero = () => {
               <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-300">
                 <CiLock />
               </div>
-              <p>About us</p>
+              <p>Mission</p>
             </div>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatu
+              To empower individuals and communities worldwide to participate in
+              building a sustainable future by incentivizing and rewarding
+              eco-friendly actions.
             </p>
           </div>
           <div className="flex flex-col gap-3">
@@ -58,11 +59,12 @@ const Hero = () => {
               <div className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-300">
                 <CiLock />
               </div>
-              <p>About us</p>
+              <p>Vision</p>
             </div>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatu
+              To be a catalyst for positive change, fostering a world where
+              every individual recognizes their role in environmental
+              stewardship.
             </p>
           </div>
         </div>
