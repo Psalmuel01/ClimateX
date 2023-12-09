@@ -33,7 +33,7 @@ const Events = () => {
         <div className="flex w-full justify-between">
           <div className="flex justify-between gap-7">
             <img src={img1} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -41,12 +41,15 @@ const Events = () => {
               <div className="text-zinc-800 text-xs mt-1">4th Nov, 2024</div>
             </div>
           </div>
-          <img src={next} className="object-contain" />
+          <img
+            src={next}
+            className="object-contain object-center w-5 my-auto"
+          />
         </div>
         <div className="flex w-full justify-between gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img2} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -62,7 +65,7 @@ const Events = () => {
         <div className="flex w-full justify-between gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img3} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Tree planting</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -78,7 +81,7 @@ const Events = () => {
         <div className="justify-between flex w-full gap-5 mt-5">
           <div className="flex justify-between gap-7">
             <img src={img4} className="object-contain" />
-            <div className="flex flex-col mt-1.5">
+            <div className="flex flex-col w-full mt-1.5">
               <div className="text-lime-950 font-bold">Waste recycling</div>
               <div className="text-zinc-800 text-sm mt-2">
                 3rd mainland bridge
@@ -92,7 +95,7 @@ const Events = () => {
           />
         </div>
       </div>
-      <div className="justify-between self-center flex w-full gap-5 mt-6">
+      <div className="justify-between self-center flex w-full gap-5 mt-10">
         <div className="flex justify-between gap-4">
           <FaMapMarkerAlt />
           <div className="text-neutral-800 text-2xl font-bold my-auto">
