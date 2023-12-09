@@ -12,6 +12,7 @@ export const ContractContext = createContext<{
   daoContract: SmartContract<any> | undefined;
   daoTokenContract: SmartContract<any> | undefined;
   rewardTokenContract: SmartContract<any> | undefined;
+  marketplaceContract: SmartContract<any> | undefined;
   multiCall: SmartContract<any> | undefined;
   address: string | undefined;
 }>({
@@ -19,13 +20,15 @@ export const ContractContext = createContext<{
   daoContract: undefined,
   daoTokenContract: undefined,
   rewardTokenContract: undefined,
+  marketplaceContract: undefined,
   multiCall: undefined,
   address: undefined,
 });
 
-const DAO_TOKEN_CONTRACT = "0xe736ddfd9eaf9a58a859ad2210e748463f297ac1";
-const REWARD_TOKEN_CONTRACT = "0x90d1e60fc055c1569be1a07c2d13004d65a859c1";
-const DAO_CONTRACT = "0x519cd0e5041e8b68027abadd9f42793249e485a4";
+const DAO_TOKEN_CONTRACT = "0x0D9EEc9feD47099298cC7Ec9037bA046A240Ba9F";
+const REWARD_TOKEN_CONTRACT = "0xe064354aea6Fcc053C72f15a60e60bCdE1282b9F";
+const DAO_CONTRACT = "0x0Ee606454056574090Fe3309F8AA9112c776E230";
+const MARKETPLACE_CONTRACT = "0x8226A3683E40813154621aF0347cb32F72FE043d";
 
 export const ContractContextProvider = ({
   children,
@@ -36,6 +39,7 @@ export const ContractContextProvider = ({
   const { contract: daoContract } = useContract(DAO_CONTRACT);
   const { contract: daoTokenContract } = useContract(DAO_TOKEN_CONTRACT);
   const { contract: rewardTokenContract } = useContract(REWARD_TOKEN_CONTRACT);
+  const { contract: marketplaceContract } = useContract(MARKETPLACE_CONTRACT);
   const { contract: multiCall } = useContract(
     "0x25Eef291876194AeFAd0D60Dff89e268b90754Bb"
   );
@@ -52,6 +56,7 @@ export const ContractContextProvider = ({
         daoContract,
         daoTokenContract,
         rewardTokenContract,
+        marketplaceContract,
         multiCall,
         isAdmin,
         address,
