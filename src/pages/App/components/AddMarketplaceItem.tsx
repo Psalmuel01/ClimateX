@@ -3,6 +3,7 @@ import { useContext, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import { MdUpload } from "react-icons/md";
 import { ContractContext } from "../../../contexts/ContractContext";
+import { parseEther } from "ethers/lib/utils";
 
 const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
   const { marketplaceContract } = useContext(ContractContext);
@@ -46,12 +47,12 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
   }, [formData]);
 
   const createProduct = async () => {
-    toast.loading("Creating impact...");
+    toast.loading("Creating Product...");
     const tx = await uploadProduct({
       args: [
         formData._name,
         formData._description,
-        Number(formData._price) * 10 ** 18,
+        parseEther(formData._price),
         formData._image,
         formData.available,
       ],
@@ -59,7 +60,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
 
     if (tx.receipt) {
       toast.dismiss();
-      toast.success("Impact created successfully");
+      toast.success("Product created successfully");
       setFormData({
         _name: "",
         _description: "",
@@ -73,7 +74,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
   };
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4  w-full max-w-md">
       <div className="form-item">
         <label htmlFor="title">Title</label>
         <input

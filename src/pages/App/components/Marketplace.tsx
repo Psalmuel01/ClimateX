@@ -1,11 +1,3 @@
-import unsplash1 from "../../../assets/unsplash1.png";
-import unsplash2 from "../../../assets/unsplash2.png";
-import unsplash3 from "../../../assets/unsplash3.png";
-import unsplash4 from "../../../assets/unsplash4.png";
-import unsplash5 from "../../../assets/unsplash5.png";
-import unsplash6 from "../../../assets/unsplash6.png";
-import unsplash7 from "../../../assets/unsplash7.png";
-import unsplash8 from "../../../assets/unsplash8.png";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Card from "../../../components/Card";
 import AddMarketplaceItem from "./AddMarketplaceItem";
