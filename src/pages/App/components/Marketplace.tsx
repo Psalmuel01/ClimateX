@@ -59,7 +59,7 @@ const Marketplace = () => {
             <Modal
               key={product.id}
               modalButton={<Card {...product} />}
-              title="View product"
+              title={""}
               setCallBack={() => {}}
               refetch={() => {}}
               buttonWrapperClass="w-full max-w-xs "
