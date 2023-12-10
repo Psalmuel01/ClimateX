@@ -49,6 +49,8 @@ export const ContractContextProvider = ({
   ]);
 
   const isAdmin = useMemo(() => Number(adminToken) > 0, [adminToken]);
+  console.log(adminToken);
+  console.log(isAdmin);
 
   return (
     <ContractContext.Provider

@@ -23,7 +23,7 @@ const Home = () => {
   ]);
 
   return (
-    <div>
+    <div className="px-5 max-md:px-3">
       <div className="md:flex gap-8">
         {/* chart */}
         <div className="flex-1 max-md:mb-5">

@@ -1,4 +1,3 @@
-// James's Signature Modal
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Dispatch,

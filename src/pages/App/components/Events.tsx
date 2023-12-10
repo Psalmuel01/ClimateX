@@ -8,7 +8,7 @@ import next from "../../../assets/next.png";
 
 const Events = () => {
   return (
-    <div className="justify-center items-center bg-white flex flex-col px-3">
+    <div className="justify-center items-center bg-white flex flex-col px-5 max-md:px-4">
       <div className="justify-between flex w-full gap-5">
         <div className="items-center flex justify-between gap-4">
           <BsCalendar2Event size={20} />
