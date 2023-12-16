@@ -210,10 +210,11 @@ const ImpactBar: React.FC<IImpactBar> = ({
   };
 
   const renderStatus = () => {
+    const buttonClass = "justify-center items-center w-full flex gap-1";
     if (isAdmin) {
       if (impactStatus === AdminStatus.Waiting_For_Validation) {
         return (
-          <button onClick={validateImpact}>
+          <button onClick={validateImpact} className={buttonClass}>
             <div className="font-medium">Validate</div>
             <MdNavigateNext />
           </button>
@@ -226,7 +227,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
       if (impactStatus === AdminStatus.Approved) {
         if (owner === address) {
           return (
-            <button onClick={claimReward}>
+            <button onClick={claimReward} className={buttonClass}>
               <div className="font-medium">Claim Reward</div>
               <MdNavigateNext />
             </button>
@@ -240,7 +241,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
       }
       if (impactStatus === Status.Approved) {
         return (
-          <button onClick={claimReward}>
+          <button onClick={claimReward} className={buttonClass}>
             <div className="font-medium">Claim Reward</div>
             <MdNavigateNext />
           </button>
@@ -286,7 +287,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
         </div>
         <div className="text-xs font-semibold my-auto flex-1">{location}</div>
 
-        <div className="justify-center items-center text-white bg-lime-950 flex gap-1 my-auto p-2.5 rounded-3xl">
+        <div className="w-28 text-center text-white bg-lime-950 my-auto p-2.5 rounded-3xl">
           {renderStatus()}
         </div>
       </div>
