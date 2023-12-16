@@ -18,7 +18,8 @@ export interface Product {
 }
 
 const Marketplace = () => {
-  const { isAdmin, marketplaceContract } = useContext(ContractContext);
+  const { isAdmin, marketplaceContract, rewardTokenContract, address } =
+    useContext(ContractContext);
   const [addMarketCallBack, setAddMarketCallBack] = useState<() => void>(
     () => () => {}
   );
@@ -27,6 +28,10 @@ const Marketplace = () => {
     marketplaceContract,
     "showProducts"
   );
+
+  const { data: balance } = useContractRead(rewardTokenContract, "balanceOf", [
+    address,
+  ]);
 
   console.log({ marketplaceData });
 
@@ -62,7 +67,7 @@ const Marketplace = () => {
               refetch={() => {}}
               buttonWrapperClass="w-full max-w-xs "
             >
-              <ViewProduct {...product} />
+              <ViewProduct {...product} balance={balance} />
             </Modal>
           ))
         ) : (

@@ -5,6 +5,10 @@ import { ContractContext } from "../../../contexts/ContractContext";
 import { useContractWrite } from "@thirdweb-dev/react";
 import toast from "react-hot-toast";
 
+interface ViewProductProps extends Product {
+  balance: bigint;
+}
+
 const ViewProduct = ({
   image,
   name,
@@ -13,7 +17,8 @@ const ViewProduct = ({
   availableItems,
   sold,
   id,
-}: Product) => {
+  balance,
+}: ViewProductProps) => {
   const { marketplaceContract } = useContext(ContractContext);
 
   const { mutateAsync: buyProduct } = useContractWrite(
@@ -33,6 +38,20 @@ const ViewProduct = ({
     }
   };
 
+  const disableBuy = () => {
+    let disable = false;
+
+    if (Number(balance) < Number(price)) {
+      disable = true;
+    }
+
+    if (Number(availableItems) <= 0) {
+      disable = true;
+    }
+
+    return disable;
+  };
+
   return (
     <div className="md:flex gap-6 md:max-w-3xl m-2">
       <div className="flex-1">
@@ -48,8 +67,9 @@ const ViewProduct = ({
         <div className="">Price: {formatEther(price)} C</div>
 
         <button
-          className="cursor-pointer text-white text-sm font-medium justify-center border bg-lime-950  hover:bg-lime-700 px-5 py-1 rounded-lg border-solid border-lime-950"
+          className="cursor-pointer text-white text-sm font-medium justify-center border bg-lime-950  hover:bg-lime-700 disabled:opacity-25 px-5 py-1 rounded-lg border-solid border-lime-950"
           onClick={buy}
+          disabled={disableBuy()}
         >
           Buy
         </button>

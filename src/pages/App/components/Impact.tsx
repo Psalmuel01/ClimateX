@@ -88,9 +88,7 @@ const Impact = () => {
             <MdNavigateBefore />
             <div className="text-neutral-700">Prev</div>
           </div>
-          <div className="text-neutral-800 font-medium my-auto">
-            1-20 of 1024
-          </div>
+          <div className="text-neutral-800 font-medium my-auto">1/1</div>
           <div className="justify-between items-center text-sm max-md:text-xs border flex gap-1 p-2 rounded-xl border-solid border-neutral-800">
             <div className="text-neutral-700">Next</div>
             <MdNavigateNext />
