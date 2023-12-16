@@ -18,6 +18,7 @@ enum AdminStatus {
   Voting_In_Progress,
   Waiting_For_Validation,
   Approved,
+  Claimed,
 }
 
 const Impact = () => {
@@ -131,6 +132,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
   description,
   yayvotes,
   nayvotes,
+  hasClaimed,
   isAdmin,
   daoContract,
   address,
@@ -160,6 +162,9 @@ const ImpactBar: React.FC<IImpactBar> = ({
   const impactStatus = useMemo(() => {
     const realDate = Number(daotime) * 1000;
     if (isAdmin) {
+      if (hasClaimed) {
+        return AdminStatus.Claimed;
+      }
       if (status === Status.Approved) {
         return AdminStatus.Approved;
       }
@@ -169,6 +174,9 @@ const ImpactBar: React.FC<IImpactBar> = ({
         return AdminStatus.Waiting_For_Validation;
       }
     } else {
+      if (hasClaimed) {
+        return AdminStatus.Claimed;
+      }
       if (Date.now() > realDate) {
         return AdminStatus.Waiting_For_Validation;
       }
@@ -179,7 +187,7 @@ const ImpactBar: React.FC<IImpactBar> = ({
         return AdminStatus.Voting_In_Progress;
       }
     }
-  }, [status, daotime, isAdmin]);
+  }, [daotime, isAdmin, hasClaimed, status]);
 
   const voteYay = async () => {
     if (isAdmin && !hasVoted) {
@@ -211,6 +219,9 @@ const ImpactBar: React.FC<IImpactBar> = ({
 
   const renderStatus = () => {
     const buttonClass = "justify-center items-center w-full flex gap-1";
+    if (impactStatus == AdminStatus.Claimed) {
+      return <p>Claimed</p>;
+    }
     if (isAdmin) {
       if (impactStatus === AdminStatus.Waiting_For_Validation) {
         return (

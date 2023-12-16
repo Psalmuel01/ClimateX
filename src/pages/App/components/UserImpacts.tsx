@@ -19,6 +19,7 @@ export interface ImpactRewardee {
   noOfImpacts: bigint;
   imageUrl: string;
   status: Status;
+  hasClaimed: boolean;
 }
 
 const UserImpacts = () => {

@@ -102,7 +102,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
       </div>
 
       <div className="form-item">
-        <label htmlFor="price">Number of Impacts</label>
+        <label htmlFor="price">Price</label>
         <input
           type="number"
           placeholder="Enter Price e.g (0.0001)"
@@ -116,7 +116,7 @@ const AddMarketplaceItem = ({ callBack }: { callBack: () => void }) => {
       </div>
 
       <div className="form-item">
-        <label htmlFor="price">Number of Impacts</label>
+        <label htmlFor="item">Number of Items in Stock</label>
         <input
           type="number"
           placeholder="Number of Items"
