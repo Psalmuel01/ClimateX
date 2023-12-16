@@ -6,6 +6,7 @@ import { useAddress } from "@thirdweb-dev/react";
 enum Status {
   Pending,
   Approved,
+  Rejected,
 }
 
 export interface ImpactRewardee {
